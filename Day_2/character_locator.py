@@ -11,3 +11,5 @@ letter_to_find = str(input("Please inter the letter : ")).lower()
 
 indices = find_letter_indices(sentence, letter_to_find)
 print(indices)
+x = 1
+print(type(eval('x + 1')))
