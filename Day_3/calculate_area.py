@@ -16,6 +16,12 @@ def calculate_area(shape, **kwargs):
                 raise ValueError(
                     "Invalid width or height values for rectangle.")
             return width * height
+        elif shape.lower() == "square":
+            side = kwargs.get("side")
+            if side is None or side <= 0:
+                raise ValueError(
+                    "Invalid side value for square.")
+            return side * side
         elif shape.lower() == "circle":
             radius = kwargs.get("radius")
             if radius is None or radius <= 0:
@@ -31,8 +37,11 @@ def calculate_area(shape, **kwargs):
 # Example usages
 triangle_area = calculate_area(shape="TRIANGLE", base=10, height=5)
 rectangle_area = calculate_area(shape="rEctangle", width=8, height=5)
+square_area = calculate_area(shape="Square", side=5)
 circle_area = calculate_area(shape="circlE", radius=3)
+
 
 print(f"Triangle Area: {triangle_area}")
 print(f"Rectangle Area: {rectangle_area}")
+print(f"Square Area: {square_area}")
 print(f"Circle Area: {circle_area}")
