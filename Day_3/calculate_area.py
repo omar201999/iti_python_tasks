@@ -45,3 +45,10 @@ print(f"Triangle Area: {triangle_area}")
 print(f"Rectangle Area: {rectangle_area}")
 print(f"Square Area: {square_area}")
 print(f"Circle Area: {circle_area}")
+
+
+def do(*arug):
+    print(arug)
+
+
+do(20, 30)
