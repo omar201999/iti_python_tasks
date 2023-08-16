@@ -1,13 +1,5 @@
-import subprocess
-
-
-def run_shell_command(command):
-    result = subprocess.run(
-        command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    if result.returncode == 0:
-        return result.stdout
-    else:
-        return result.stderr
-
-
-print(run_shell_command("echo 'Hello, World!'"))
+from fabric import Connection
+c = Connection(host='10.0.2.15', user='omar',
+               connect_kwargs={'password': '2011'})
+result = c.run('ls -l', hide=True)
+print(result.stdout)
